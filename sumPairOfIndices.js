@@ -2,17 +2,14 @@ function findPairIndices(arr, target) {
   const numIndices = new Map();
 
   for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i])
     const complement = target - arr[i];
     console.log(complement)
 
     if (numIndices.has(complement)) {
-        console.log("--------------------------------",[numIndices.get(complement), i])
       return [numIndices.get(complement), i];
     }
 
     numIndices.set(arr[i], i);
-    console.log("NumIndices",numIndices);
   }
 
   return null; // Return null if no pair is found
